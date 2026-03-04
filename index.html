@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>طرابلس الغرب · عاصمة السياحة الإسلامية 2028</title>
+  <!-- Font Awesome 6 (مجاني) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- خط Cairo -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Cairo', sans-serif;
+      background: #f0f5fa;
+      color: #1e2b37;
+      line-height: 1.7;
+      scroll-behavior: smooth;
+    }
+
+    /* ===== الهيدر الجديد ===== */
+    .hero {
+      background: linear-gradient(135deg, #0a3144d9, #135b7ad9), 
+                  url('https://images.unsplash.com/photo-1597218859964-9f6c41c7f3b2?q=80&w=2070&auto=format&fit=crop') center/cover no-repeat;
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      border-bottom: 8px solid #e6b422;
+    }
+
+    .hero-content {
+      max-width: 1000px;
+      padding: 2.5rem;
+      background: rgba(7, 37, 55, 0.65);
+      backdrop-filter: blur(8px);
+      border-radius: 70px 20px 70px 20px;
+      border: 3px solid #f5c542;
+      box-shadow: 0 25px 40px rgba(0,0,0,0.4);
+    }
+
+    .ministry {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      background: linear-gradient(145deg, #f5e56b, #f3b33d);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-shadow: 2px 2px 0 #00000040;
+      margin-bottom: 0.2rem;
+    }
+
+    .committee {
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: #FFE484;
+      background: rgba(0, 0, 0, 0.3);
+      padding: 0.2rem 2rem;
+      border-radius: 50px;
+      display: inline-block;
+      margin-bottom: 1rem;
+      border: 1px solid #f5c542;
+    }
+
+    .hero h1 {
+      font-size: 4.2rem;
+      font-weight: 800;
+      text-shadow: 4px 4px 12px black;
+      margin: 0.5rem 0 0.2rem;
+    }
+
+    .hero h1 i {
+      color: #f5c542;
+      font-size: 3.8rem;
+      margin: 0 0.3rem;
+    }
+
+    .hero p {
+      font-size: 2rem;
+      font-weight: 300;
+      background: rgba(0,0,0,0.2);
+      padding: 0.5rem 2rem;
+      border-radius: 50px;
+      backdrop-filter: blur(4px);
+      display: inline-block;
+    }
+
+    .hero .sub {
+      font-size: 1.4rem;
+      margin-top: 1rem;
+      color: #ddd;
+    }
+
+    /* الشريط العلوي الثابت */
+    .nav-strip {
+      background: #083d56;
+      padding: 0.8rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      box-shadow: 0 4px 12px #00000050;
+    }
+
+    .nav-strip ul {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.3rem 1rem;
+      list-style: none;
+      padding: 0 1rem;
+    }
+
+    .nav-strip a {
+      color: #f0f0f0;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 0.3rem 1.5rem;
+      border-radius: 30px;
+      background: #1d627e;
+      transition: 0.3s;
+      display: inline-block;
+      font-size: 1rem;
+      border: 1px solid #e6b422;
+    }
+
+    .nav-strip a:hover {
+      background: #e6b422;
+      color: #083d56;
+      transform: translateY(-3px);
+    }
+
+    /* الحاوية الرئيسية */
+    .container {
+      width: 95%;
+      max-width: 1300px;
+      margin: 2rem auto;
+    }
+
+    /* البطاقات القابلة للطي */
+    .card-section {
+      background: white;
+      border-radius: 40px 40px 30px 30px;
+      margin-bottom: 2.5rem;
+      box-shadow: 0 20px 30px -10px #0a3b4f33;
+      overflow: hidden;
+      border: 1px solid #d5e5ee;
+    }
+
+    .card-header {
+      background: linear-gradient(145deg, #11698e, #0a4b68);
+      color: white;
+      padding: 1.3rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      cursor: pointer;
+      transition: 0.3s;
+      border-bottom: 4px solid #f3b33d;
+    }
+
+    .card-header:hover {
+      background: linear-gradient(145deg, #0f7ca8, #0c5f82);
+      padding-right: 2.5rem;
+    }
+
+    .card-header i {
+      font-size: 2.2rem;
+      color: #f3b33d;
+      filter: drop-shadow(2px 2px 0 #a05f1a);
+    }
+
+    .card-header h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    .card-header .toggle-icon {
+      margin-right: auto;
+      font-size: 2.2rem;
+      transition: 0.5s;
+    }
+
+    .card-content {
+      display: none;
+      padding: 2.2rem;
+      background: #f9feff;
+      border-top: 2px dashed #b0d4e0;
+    }
+
+    /* شبكات الصور */
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .img-card {
+      background: white;
+      border-radius: 30px;
+      overflow: hidden;
+      box-shadow: 0 8px 18px #1b3d4f1a;
+      transition: 0.3s;
+      border: 1px solid #d1e3ec;
+    }
+
+    .img-card:hover {
+      transform: scale(1.02);
+      box-shadow: 0 20px 25px -5px #103d50;
+    }
+
+    .img-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-bottom: 5px solid #e6b422;
+    }
+
+    .img-card .caption {
+      padding: 0.8rem;
+      font-weight: 600;
+      background: #eef7fb;
+      text-align: center;
+      color: #07455e;
+    }
+
+    /* قوائم أيقونات */
+    ul.fancy-list {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem 1.2rem;
+    }
+
+    ul.fancy-list li {
+      background: #dbeef8;
+      padding: 0.5rem 1.2rem 0.5rem 2.2rem;
+      border-radius: 50px;
+      font-weight: 600;
+      color: #07455e;
+      border-right: 5px solid #e6b422;
+      position: relative;
+    }
+
+    ul.fancy-list li i {
+      color: #c78d1e;
+      margin-left: 0.5rem;
+      font-size: 1.1rem;
+      position: absolute;
+      right: 8px;
+      top: 10px;
+    }
+
+    /* جدول OIC */
+    .oic-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0 8px;
+      margin: 1.5rem 0;
+    }
+
+    .oic-table th {
+      background: #11698e;
+      color: white;
+      font-weight: 700;
+      padding: 0.8rem;
+      border-radius: 30px 30px 5px 5px;
+      font-size: 1.2rem;
+    }
+
+    .oic-table td {
+      background: #e9f2f7;
+      padding: 0.8rem 1.5rem;
+      border-radius: 20px;
+      font-weight: 600;
+    }
+
+    .oic-table td:first-child {
+      background: #c6e2f0;
+      color: #043546;
+      width: 40%;
+    }
+
+    .rating {
+      color: #f3b33d;
+      letter-spacing: 4px;
+    }
+
+    /* معرض صور إضافي */
+    .gallery-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      margin: 2rem 0 1rem;
+    }
+
+    .gallery-row img {
+      width: 180px;
+      height: 130px;
+      object-fit: cover;
+      border-radius: 30px 10px 30px 10px;
+      border: 4px solid white;
+      box-shadow: 0 8px 18px #00000025;
+      transition: 0.2s;
+    }
+
+    .gallery-row img:hover {
+      border-radius: 10px 30px 10px 30px;
+      border-color: #e6b422;
+    }
+
+    /* تذييل محدث */
+    footer {
+      background: #052a38;
+      color: #ddd;
+      padding: 2.5rem 1rem;
+      margin-top: 4rem;
+      text-align: center;
+      border-top: 6px solid #e6b422;
+      font-size: 1.2rem;
+    }
+
+    footer i {
+      color: #f5c542;
+      margin: 0 0.3rem;
+    }
+
+    footer .designer {
+      font-size: 1rem;
+      margin-top: 0.8rem;
+      opacity: 0.9;
+      letter-spacing: 1px;
+      color: #f5d742;
+    }
+
+    /* زر العودة للأعلى */
+    .go-top {
+      position: fixed;
+      bottom: 30px;
+      left: 30px;
+      background: #e6b422;
+      color: #043546;
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      box-shadow: 0 5px 18px #00000050;
+      cursor: pointer;
+      transition: 0.3s;
+      border: 3px solid white;
+      z-index: 1000;
+    }
+
+    .go-top:hover {
+      background: #ffd966;
+      transform: scale(1.1) rotate(360deg);
+    }
+
+    @media (max-width: 700px) {
+      .ministry { font-size: 1.5rem; }
+      .committee { font-size: 1.2rem; }
+      .hero h1 { font-size: 2.8rem; }
+      .hero p { font-size: 1.4rem; }
+      .card-header h2 { font-size: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ========== الهيدر الجديد ========== -->
+<div class="hero">
+  <div class="hero-content">
+    <div class="ministry">وزارة السياحة والصناعات التقليدية</div>
+    <div class="committee">لجنة اختيار الترشيح لعاصمة السياحة الإسلامية 2028</div>
+    <h1><i class="fas fa-star-and-crescent"></i> طرابلس الغرب <i class="fas fa-umbrella-beach"></i></h1>
+    <p>عاصمة البحر المتوسط .. عراقة وأصالة</p>
+    <div class="sub"><i class="fas fa-map-pin"></i> ليبيا — الملف الرسمي للترشيح</div>
+  </div>
+</div>
+
+<!-- شريط التنقل السريع -->
+<div class="nav-strip">
+  <ul>
+    <li><a href="#historical"><i class="fas fa-archway"></i> تاريخية</a></li>
+    <li><a href="#nature"><i class="fas fa-water"></i> شواطئ</a></li>
+    <li><a href="#hotels"><i class="fas fa-hotel"></i> فنادق</a></li>
+    <li><a href="#food"><i class="fas fa-utensils"></i> مطاعم</a></li>
+    <li><a href="#culture"><i class="fas fa-landmark"></i> متاحف</a></li>
+    <li><a href="#oic"><i class="fas fa-chart-line"></i> تقييم OIC</a></li>
+  </ul>
+</div>
+
+<!-- الحاوية الرئيسية -->
+<div class="container">
+
+  <!-- المقدمة الوطنية (مطوية) -->
+  <div class="card-section">
+    <div class="card-header" onclick="toggleCard(this)">
+      <i class="fas fa-scroll"></i>
+      <h2>المقدمة: ليبيا وطرابلس في قلب المتوسط</h2>
+      <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+    </div>
+    <div class="card-content">
+      <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+        <div style="flex: 2;">
+          <p style="font-size:1.2rem;">تتقدم دولة ليبيا ممثلة في وزارة السياحة والصناعات التقليدية بملف مدينة <strong>طرابلس</strong> لنيل لقب <strong>عاصمة السياحة في العالم الإسلامي 2028</strong>. تحظى طرابلس بمكانة فريدة تمزج بين عبق التاريخ الإسلامي ووهج البحر الأبيض المتوسط، وتضم أكثر من 60٪ من النشاط السياحي الليبي.</p>
+          <p>تستوفي المدينة كافة معايير منظمة التعاون الإسلامي: بنية تحتية متطورة، إرث ثقافي إسلامي نادر، فنادق عالمية، وصروح سياحية متنوعة.</p>
+        </div>
+        <img src="https://images.unsplash.com/photo-1566024287286-457246b676da?q=80&w=1887&auto=format&fit=crop" alt="طرابلس القديمة" style="width:280px; border-radius: 40px; border:5px solid #f1c40f;">
+      </div>
+      <div class="gallery-row">
+        <img src="https://images.unsplash.com/photo-1597218859964-9f6c41c7f3b2?q=80&w=1974&auto=format&fit=crop" alt="منظر ساحلي">
+        <img src="https://images.unsplash.com/photo-1597212619810-9a12a6c7faee?q=80&w=1912&auto=format&fit=crop" alt="قوس طرابلس">
+        <img src="https://plus.unsplash.com/premium_photo-1661964219723-891989f9a127?q=80&w=2070&auto=format&fit=crop" alt="ميناء الصيادين">
+      </div>
+    </div>
+  </div>
+
+  <!-- الامتثال المؤسسي -->
+  <div class="card-section">
+    <div class="card-header" onclick="toggleCard(this)">
+      <i class="fas fa-bullhorn"></i>
+      <h2>الامتثال المؤسسي ومعايير OIC</h2>
+      <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+    </div>
+    <div class="card-content">
+      <ul class="fancy-list">
+        <li><i class="fas fa-check-circle"></i> استراتيجية وطنية للسياحة الإسلامية 2025</li>
+        <li><i class="fas fa-check-circle"></i> لجنة عليا للإشراف على ملف الترشيح</li>
+        <li><i class="fas fa-check-circle"></i> التوافق الكامل مع آلية اختيار OIC</li>
+        <li><i class="fas fa-check-circle"></i> دعم رئاسي ومشاركة مجتمعية</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- طرابلس – تاريخ وإسلام (المعالم) -->
+  <div class="card-section" id="historical">
+    <div class="card-header" onclick="toggleCard(this)">
+      <i class="fas fa-mosque"></i>
+      <h2>المزارات التاريخية والإسلامية</h2>
+      <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+    </div>
+    <div class="card-content">
+      <div class="image-grid">
+        <div class="img-card">
+          <img src="https://images.unsplash.com/photo-1623492701902-47dc2dfc08b6?q=80&w=1887&auto=format&fit=crop" alt="جامع أحمد باشا">
+          <div class="caption">جامع أحمد باشا القره مانلي</div>
+        </div>
+        <div class="img-card">
+          <img src="https://images.unsplash.com/photo-1609599006353-e628aa6c8b7a?q=80&w=1974&auto=format&fit=crop" alt="جامع الناقة">
+          <div class="caption">جامع الناقة (الجامع العتيق)</div>
+        </div>
+        <div class="img-card">
+          <img src="https://images.unsplash.com/photo-1623492701902-47dc2dfc08b6?q=80&w=1887&auto=format&fit=crop" alt="السرايا الحمراء">
+          <div class="caption">قلعة السرايا الحمراء</div>
+        </div>
+        <div class="img-card">
+          <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?q=80&w=1974&auto=format&fit=crop" alt="المدينة القديمة">
+          <div class="caption">المدينة القديمة والأسواق</div>
+        </div>
+      </div>
+      <ul class="fancy-list">
+        <li><i class="fas fa-landmark"></i> زاوية سيدي سالم</li>
+        <li><i class="fas fa-landmark"></i> جامع سيدي عبدالوهاب القيسي</li>
+        <li><i class="fas fa-landmark"></i> قوس ماركوس أوريليوس (روماني)</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- الطبيعة والشواطئ -->
+  <div class="card-section" id="nature">
+    <div class="card-header" onclick="toggleCard(this)">
+      <i class="fas fa-umbrella-beach"></i>
+      <h2>المواقع الطبيعية والساحلية</h2>
+      <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+    </div>
+    <div class="card-content">
+      <div class="image-grid">
+        <div class="img-card">
+          <img src="https://images.unsplash.com/photo-1597218859964-9f6c41c7f3b2?q=80&w=1974&auto=format&fit=crop" alt="شاطئ جنزور">
+          <div class="caption">شاطئ جنزور السياحي</div>
+        </div>
+        <div class="img-card">
+          <img src="https://images.unsplash.com/photo-1589802829985-817eae404d69?q=80&w=1974&auto=format&fit=crop" alt="كورنيش طرابلس">
+          <div class="caption">كورنيش طرابلس البحري</div>
+        </div>
+        <div class="img-card">
+          <img src="https://images.unsplash.com/photo-1589198379180-1f4a9a6e85c8?q=80&w=1964&auto=format&fit=crop" alt="تاجوراء">
+          <div class="caption">شاطئ تاجوراء</div>
+        </div>
+        <div class="img-card">
+          <img src="https://images.unsplash.com/photo-1588796838655-f1bff2403a32?q=80&w=1974&auto=format&fit=crop" alt="مرسى اليخوت">
+          <div class="caption">مرسى اليخوت والرياضات البحرية</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- الفنادق الفاخرة -->
+  <div class="card-section" id="hotels">
+    <div class="card-header" onclick="toggleCard(this)">
+      <i class="fas fa-hotel"></i>
+      <h2>أفخم الفنادق والمنتجعات</h2>
+      <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+    </div>
+    <div class="card-content">
+      <div class="image-grid">
+        <div class="img-card">
+          <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2070&auto=format&fit=crop" alt="كورنثيا">
+          <div class="caption">فندق كورنثيا باب أفريقيا</div>
+        </div>
+        <div class="img-card">
+          <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=2070&auto=format&fit=crop" alt="المهاري">
+          <div class="caption">المهاري راديسون بلو</div>
+        </div>
+        <div class="img-card">
+          <img src="https://images.unsplash.com/photo-1522798514-97ceb8c4f1c8?q=80&w=1935&auto=format&fit=crop" alt="فور بوينتس">
+          <div class="caption">فور بوينتس باي شيراتون</div>
+        </div>
+        <div class="img-card">
+          <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?q=80&w=2070&auto=format&fit=crop" alt="الودان">
+          <div class="caption">فندق الودان</div>
+        </div>
+      </div>
+      <p><i class="fas fa-star rating"></i> برج الحياة ، فندق باب البحر ، أكروبوليس</p>
+    </div>
+  </div>
+
+  <!-- المطاعم والمقاهي -->
+  <div class="card-section" id="food">
+    <div class="card-header" onclick="toggleCard(this)">
+      <i class="fas fa-utensils"></i>
+      <h2>المطاعم والمقاهي التراثية</h2>
+      <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+    </div>
+    <div class="card-content">
+      <div class="image-grid">
+        <div class="img-card">
+          <img src="https://images.unsplash.com/photo-1550966871-3ed3d625e1f7?q=80&w=2070&auto=format&fit=crop" alt="مطعم بحري">
+          <div class="caption">مطاعم المأكولات البحرية (المنارة)</div>
+        </div>
+        <div class="img-card">
+          <img src="https://images.unsplash.com/photo-1579027989536-b7b1f875659b?q=80&w=2070&auto=format&fit=crop" alt="مقهى تراثي">
+          <div class="caption">مقاهي المدينة القديمة</div>
+        </div>
+        <div class="img-card">
+          <img src="https://images.unsplash.com/photo-1586190848861-99aa4a171e90?q=80&w=2080&auto=format&fit=crop" alt="باتيه ليبية">
+          <div class="caption">مطاعم الأكلات الليبية (الروحة)</div>
+        </div>
+        <div class="img-card">
+          <img src="https://images.unsplash.com/photo-1586190848861-99aa4a171e90?q=80&w=2080&auto=format&fit=crop" alt="كبسة">
+          <div class="caption">مطاعم عصرية على الكورنيش</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- متاحف ومؤسسات ثقافية -->
+  <div class="card-section" id="culture">
+    <div class="card-header" onclick="toggleCard(this)">
+      <i class="fas fa-university"></i>
+      <h2>المتاحف ودور الثقافة</h2>
+      <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+    </div>
+    <div class="card-content">
+      <div class="image-grid">
+        <div class="img-card">
+          <img src="https://images.unsplash.com/photo-1580034280211-9c7cb76c73e1?q=80&w=1887&auto=format&fit=crop" alt="المتحف الوطني">
+          <div class="caption">المتحف الوطني (السراي الحمراء)</div>
+        </div>
+        <div class="img-card">
+          <img src="https://images.unsplash.com/photo-1544967082-d9d25d867d66?q=80&w=1887&auto=format&fit=crop" alt="متحف ليبيا">
+          <div class="caption">متحف ليبيا – قصر الخلد</div>
+        </div>
+      </div>
+      <p>مكتبة الأسرة ، مركز عمر المختار الثقافي ، دار الفنون</p>
+    </div>
+  </div>
+
+  <!-- سياحة الأعمال والمؤتمرات -->
+  <div class="card-section">
+    <div class="card-header" onclick="toggleCard(this)">
+      <i class="fas fa-chalkboard"></i>
+      <h2>سياحة الأعمال والمؤتمرات</h2>
+      <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+    </div>
+    <div class="card-content">
+      <ul class="fancy-list">
+        <li><i class="fas fa-microphone"></i> قاعة المؤتمرات الكبرى (الفندق الكبير)</li>
+        <li><i class="fas fa-globe"></i> استضافة مؤتمر السياحة الإسلامي الدولي 2028</li>
+        <li><i class="fas fa-handshake"></i> معرض الصناعات التقليدية السنوي</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- تقييم OIC + جدول -->
+  <div class="card-section" id="oic">
+    <div class="card-header" onclick="toggleCard(this)">
+      <i class="fas fa-clipboard-check"></i>
+      <h2>تقييم طرابلس وفق معايير OIC</h2>
+      <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+    </div>
+    <div class="card-content">
+      <table class="oic-table">
+        <tr><th>المعيار</th><th>التقييم</th></tr>
+        <tr><td>المقومات السياحية</td><td><span class="rating">★★★★★</span> ممتاز</td></tr>
+        <tr><td>التراث الإسلامي</td><td><span class="rating">★★★★★</span> ممتاز</td></tr>
+        <tr><td>البنية التحتية</td><td><span class="rating">★★★★☆</span> ممتاز جداً</td></tr>
+        <tr><td>الخدمات الفندقية</td><td><span class="rating">★★★★★</span> ممتاز</td></tr>
+        <tr><td>الجاهزية الدولية</td><td><span class="rating">★★★★★</span> مرتفعة جداً</td></tr>
+      </table>
+      <p>تحقق طرابلس أعلى النقاط في المؤشرات الرئيسية، مما يؤهلها لتكون عاصمة السياحة الإسلامية 2028 بجدارة.</p>
+    </div>
+  </div>
+
+  <!-- برنامج سنة الاستضافة + الأثر -->
+  <div class="card-section">
+    <div class="card-header" onclick="toggleCard(this)">
+      <i class="fas fa-calendar-alt"></i>
+      <h2>برنامج الاستضافة والأثر الاقتصادي</h2>
+      <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+    </div>
+    <div class="card-content">
+      <div style="display: flex; flex-wrap: wrap; gap: 2rem;">
+        <div style="flex:1;">
+          <h3><i class="fas fa-tasks"></i> الفعاليات المقترحة</h3>
+          <ul class="fancy-list">
+            <li>أسبوع التراث الإسلامي</li>
+            <li>معرض الخط العربي والزخرفة</li>
+            <li>مهرجان المأكولات الليبية</li>
+          </ul>
+        </div>
+        <div style="flex:1;">
+          <h3><i class="fas fa-chart-pie"></i> الأثر المتوقع</h3>
+          <ul class="fancy-list">
+            <li>خلق 5000 فرصة عمل</li>
+            <li>تنشيط الصناعات التقليدية</li>
+            <li>زيادة الاستثمارات الفندقية</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div> <!-- نهاية container -->
+
+<!-- ===== الفوتر المعدل ===== -->
+<footer>
+  <i class="fas fa-crown"></i> دولة ليبيا – وزارة السياحة والصناعات التقليدية <i class="fas fa-crown"></i><br>
+  <span style="color:#f5c542;">© 2028 - ملف ترشيح طرابلس لعاصمة السياحة الإسلامية</span><br>
+  <span class="designer"><i class="fas fa-code"></i> تصميم وبرمجة: م.أسامة فرج الخبولي <i class="fas fa-pen-fancy"></i></span>
+</footer>
+
+<div class="go-top" onclick="window.scrollTo({top:0,behavior:'smooth'});">
+  <i class="fas fa-rocket"></i>
+</div>
+
+<script>
+  // وظيفة طي وفتح الأقسام مع تغيير الأيقونة
+  function toggleCard(header) {
+    const content = header.nextElementSibling;
+    const icon = header.querySelector('.toggle-icon i');
+    if (content.style.display === 'block') {
+      content.style.display = 'none';
+      if (icon) {
+        icon.classList.remove('fa-chevron-up');
+        icon.classList.add('fa-chevron-down');
+      }
+    } else {
+      content.style.display = 'block';
+      if (icon) {
+        icon.classList.remove('fa-chevron-down');
+        icon.classList.add('fa-chevron-up');
+      }
+    }
+  }
+
+  // فتح أول قسم تلقائياً عند تحميل الصفحة (المقدمة)
+  window.onload = function() {
+    const firstHeader = document.querySelector('.card-section .card-header');
+    if (firstHeader) {
+      const firstContent = firstHeader.nextElementSibling;
+      firstContent.style.display = 'block';
+      const icon = firstHeader.querySelector('.toggle-icon i');
+      if (icon) {
+        icon.classList.remove('fa-chevron-down');
+        icon.classList.add('fa-chevron-up');
+      }
+    }
+  }
+</script>
+
+</body>
+</html>
